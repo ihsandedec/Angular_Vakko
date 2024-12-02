@@ -1,0 +1,23 @@
+.mainBody{
+    background-color: #f9f9f9;
+    font-family: inherit;
+    padding: 0;
+    margin: 0;
+    font-weight: 400;
+    line-height: inherit;
+
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+@media  (max-width: 630px) {
+  html{
+    width: fit-content;
+  }
+}

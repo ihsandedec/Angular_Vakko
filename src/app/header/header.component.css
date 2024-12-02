@@ -1,0 +1,111 @@
+
+@media only screen and (max-width: 1025px) {
+  .header-id {
+    height: 48px !important;
+  }
+  .header-div {
+    padding: 0 1rem !important;
+    height: 48px !important;
+    border-bottom: 1px solid #E4E4E4;
+  }
+  .header-id .header-div svg.icon {
+    font-size: 24px;
+  }
+  .header-links {
+    gap: 12px !important;
+    margin-left: 0;
+    display: flex;
+  }
+  .header-id .header-logo {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .header-id .header-menu {
+    margin-right: 2.75rem;
+  }
+  .header-id .header-logo .logo {
+    width: 150px;
+  }
+}
+
+
+.header-id {
+  height: 84px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+header {
+  display: block;
+  unicode-bidi: isolate;
+}
+
+.header-logo-vakko{
+  width: 100%;
+  height: auto;
+}
+
+* {
+  outline: 0;
+  text-decoration: none;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.header-id .header-div {
+  top: auto;
+  left: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 50px;
+  width: 100%;
+  height: 84px;
+  color: #111;
+  background-color: #f9f9f9;
+  z-index: 10;
+}
+
+.button{
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+.icon {
+  display: inline-block;
+  flex: none !important;
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  font-size: 32px;
+  color: #000;
+  fill: currentColor;
+  stroke-width: 0;
+  stroke: currentColor;
+  cursor: pointer;
+}
+
+.header-id .header-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 240px;
+    height: 100%;
+}
+
+.header-id .header-menu{
+  margin-right: 50px;
+}
+
+
+.header-links {
+  display: flex;
+  gap: 24px;
+  margin-left: auto;
+} 
