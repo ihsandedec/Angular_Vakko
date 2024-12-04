@@ -1,0 +1,172 @@
+{
+    "kozmetik": {
+        "leftCategories": [
+            {
+                "title": "ERKEK PARFÜM",
+                "isLink": false,
+                "subcategories": [
+                    {
+                        "name": "Infiniti For Him",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Infiniti For Him 2'li Set",
+                        "link": "#"
+                    },
+                    {
+                        "name": "V De Vakko",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Infiniti For Us",
+                        "link": "#"
+                    }
+                ]
+            },
+            {
+                "title": "KADIN PARFÜM",
+                "isLink": false,
+                "subcategories": [
+                    {
+                        "name": "Infinity For Her",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Infinity For Her Glam",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Infinity For Her Grey",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Infinity For Us",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Katia",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Infinity For Her 2'li Set",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Infinity For Her 3'lü Set",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Infinity For Her Body Mist",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Katia 2'li Set",
+                        "link": "#"
+                    }
+                ]
+            },
+            {
+                "title": "UNISEX PARFÜM",
+                "isLink": false,
+                "subcategories": [
+                    {
+                        "name": "Infinity For Us",
+                        "link": "#"
+                    }
+                ]
+            }
+        ],
+        "rightCategories": [
+            {
+                "title": "HEDİYE SETLERİ",
+                "isLink": false,
+                "subcategories": [
+                    {
+                        "name": "Kadın Hediye Setleri",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Erkek Hediye Setleri",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Kolonya Hediye Setleri",
+                        "link": "#"
+                    }
+                ]
+            },
+            {
+                "title": "KOLONYA",
+                "isLink": false,
+                "subcategories": [
+                    {
+                        "name": "Riga Amber",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Bois De Cedre Atlas",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Marine Imperial",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Citrus",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Leather",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Blue Suede",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Tangerine & Manderine",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Atmosphere",
+                        "link": "#"
+                    }
+                ]
+            },
+            {
+                "title": "OJE",
+                "link": "#"
+            },
+            {
+                "title": "EL VE VÜCUT BAKIM",
+                "isLink": false,
+                "subcategories": [
+                    {
+                        "name": "Sıvı Sabunlar",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Sabunlar",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Body Mist",
+                        "link": "#"
+                    }
+                ]
+            },
+            {
+                "title": "YILBAŞI HEDİYE ÖNERİLERİ",
+                "link": "#",
+                "style": {
+                    "color": "rgb(212, 66, 62)"
+                }
+            }
+        ],
+        "sideImage": {
+            "src": "assets/sidenavImg/sidebarimg08.jpeg",
+            "alt": "kozmetik",
+            "link": "#"
+        }
+    }
+}

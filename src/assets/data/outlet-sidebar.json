@@ -1,0 +1,133 @@
+{
+    "outlet": {
+        "leftCategories": [
+            {
+                "title": "KADIN",
+                "isLink": false,
+                "subcategories": [
+                    {
+                        "name": "Giyim",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Aksesuar",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Eşarp & Şal Koleksiyonu",
+                        "link": "#"
+                    }
+                ]
+            },
+            {
+                "title": "ERKEK",
+                "isLink": false,
+                "subcategories": [
+                    {
+                        "name": "Giyim",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Aksesuar",
+                        "link": "#"
+                    }
+                ]
+            },
+            {
+                "title": "SHOES & BAGS",
+                "link": "#",
+                "subcategories": [
+                    {
+                        "name": "Kadın",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Erkek",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Monogram",
+                        "link": "#"
+                    }
+                ]
+            },
+            {
+                "title": "COUTURE",
+                "link": "#",
+                "subcategories": [
+                    {
+                        "name": "Elbise",
+                        "link": "#"
+                    }
+                ]
+            }
+        ],
+        "rightCategories": [
+            {
+                "title": "V2K DESIGNERS",
+                "link": "#",
+                "subcategories": [
+                    {
+                        "name": "Kadın",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Erkek",
+                        "link": "#"
+                    }
+                ]
+            },
+            {
+                "title": "MARE",
+                "link": "#",
+                "subcategories": [
+                    {
+                        "name": "Plaj Giyim",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Mayo & Bikini",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Sandalet & Terlik",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Aksesuar",
+                        "link": "#"
+                    }
+                ]
+            },
+            {
+                "title": "HOME",
+                "link": "#",
+                "subcategories": [
+                    {
+                        "name": "Ev Dekorasyonu",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Ev Tekstili",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Dekoratif Yastıklar",
+                        "link": "#"
+                    }
+                ]
+            }
+        ],
+        "bottomCategories": [
+            {
+                "title": "4000 TL VE ÜZERİNE ÖZEL İNDİRİM",
+                "link": "#"
+            }
+        ],
+        "sideImage": {
+            "src": "assets/sidenavImg/sidebarimg12.jpeg",
+            "alt": "outlet",
+            "link": "#"
+        }
+    }
+}

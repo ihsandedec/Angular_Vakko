@@ -1,0 +1,54 @@
+{
+    "latelier": {
+        "leftCategories": [
+            {
+                "title": "ÇİKOLATALAR",
+                "isLink": false,
+                "subcategories": [
+                    {
+                        "name": "Klasik Çikolatalar",
+                        "link": "#"
+                    },
+                    {
+                        "name": "El Yapımı Çikolatalar",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Atıştırmalık Çikolatalar",
+                        "link": "#"
+                    }
+                ]
+            }
+        ],
+        "rightCategories": [
+            {
+                "title": "PATİSSERİE",
+                "link": "#"
+            },
+            {
+                "title": "DELİGHT",
+                "link": "#"
+            },
+            {
+                "title": "ICE CREAM",
+                "link": "#"
+            },
+            {
+                "title": "BİSTROT",
+                "link": "#"
+            },
+            {
+                "title": "YILBAŞI HEDİYE ÖNERİLERİ",
+                "link": "#",
+                "style": {
+                    "color": "rgb(212, 66, 62)"
+                }
+            }
+        ],
+        "sideImage": {
+            "src": "assets/sidenavImg/sidebarimg09.jpeg",
+            "alt": "latelier",
+            "link": "#"
+        }
+    }
+}

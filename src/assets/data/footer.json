@@ -1,0 +1,191 @@
+{
+    "footerTopItems": [
+        {
+            "icon": "assets/footerSvg/safesho.svg",
+            "title": "GÜVENLİ ALIŞVERİŞ",
+            "description": ""
+        },
+        {
+            "icon": "assets/footerSvg/cargo.svg",
+            "title": "ÜCRETSİZ KARGO",
+            "description": "1000 TL ve üzeri siparişinde ücretsiz kargo"
+        },
+        {
+            "icon": "assets/footerSvg/return.svg",
+            "title": "KOLAY DEĞİŞİM VE İADE",
+            "description": ""
+        }
+    ],
+    "footerLinks": [
+        {
+            "class": "first-li",
+            "title": "KEŞFET",
+            "children": [
+                {
+                    "text": "Vakko Hakkında",
+                    "href": "#"
+                },
+                {
+                    "text": "Mağazalar",
+                    "href": "#"
+                },
+                {
+                    "text": "Vakko Card",
+                    "href": "#"
+                }
+            ]
+        },
+        {
+            "class": "second-li",
+            "title": "VAKKO GROUP",
+            "children": [
+                {
+                    "text": "V2K DESIGNERS",
+                    "href": "#"
+                },
+                {
+                    "text": "VAKKORAMA",
+                    "href": "#"
+                },
+                {
+                    "text": "VAKKO L'ATELIER",
+                    "href": "#"
+                },
+                {
+                    "text": "VAKKO HOTEL & RESIDENCE",
+                    "href": "#"
+                },
+                {
+                    "text": "VAKKO ESMOD",
+                    "href": "#"
+                },
+                {
+                    "text": "VAKKO SCHOOL OF HOSPITALITY AND SERVICE",
+                    "href": "#"
+                },
+                {
+                    "text": "POWER GROUP",
+                    "href": "#"
+                },
+                {
+                    "text": "VİTALİ HAKKO KREATİF ENDÜSTRİLER KÜTÜPHANESİ",
+                    "href": "#"
+                }
+            ]
+        },
+        {
+            "class": "third-li",
+            "title": "BİLGİ",
+            "children": [
+                {
+                    "text": "Sıkça Sorulan Sorular",
+                    "href": "#"
+                },
+                {
+                    "text": "İletişim",
+                    "href": "#"
+                },
+                {
+                    "text": "Kurumsal İletişim",
+                    "href": "#"
+                },
+                {
+                    "text": "Teslimat",
+                    "href": "#"
+                },
+                {
+                    "text": "İade Ve Değişim",
+                    "href": "#"
+                },
+                {
+                    "text": "Kurumsal Satış",
+                    "href": "#"
+                }
+            ]
+        },
+        {
+            "class": "",
+            "title": "MÜŞTERİ İLİŞKİLERİ",
+            "children": [
+                {
+                    "text": "Çerez Politikası",
+                    "href": "#"
+                },
+                {
+                    "text": "Müşteri Aydınlatma Metni",
+                    "href": "#"
+                },
+                {
+                    "text": "Sınırlı Sorumluluk",
+                    "href": "#"
+                },
+                {
+                    "text": "Fikri Sınai Mülkiyet",
+                    "href": "#"
+                },
+                {
+                    "text": "Bilgi Güvenliği",
+                    "href": "#"
+                },
+                {
+                    "text": "Bilgi Toplumu Hizmetleri",
+                    "href": "#"
+                },
+                {
+                    "text": "Kalite Politikası",
+                    "href": "#"
+                },
+                {
+                    "text": "Yatırımcı İlişkileri",
+                    "href": "#"
+                },
+                {
+                    "text": "Sürdürülebilirlik",
+                    "href": "#"
+                }
+            ]
+        }
+    ],
+    "footerMedia": [
+        {
+            "icon": "assets/footerSvg/facebook.svg"
+        },
+        {
+            "icon": "assets/footerSvg/twitterx.svg"
+        },
+        {
+            "icon": "assets/footerSvg/instagram.svg"
+        },
+        {
+            "icon": "assets/footerSvg/youtube.svg"
+        }
+    ],
+    "appDescription": "Vakko shop her platformda yanınızda",
+    "appStores": [
+        {
+            "image": "assets/web/apple-store.png",
+            "width": 150,
+            "height": 48,
+            "alt": "apple"
+        },
+        {
+            "image": "assets/web/google-store.png",
+            "width": 150,
+            "height": 48,
+            "alt": "google"
+        }
+    ],
+    "copyrightText": "© COPYRIGHT 2024 VAKKO GROUP",
+    "etbisImage": "https://cdn.vakko.com/banners/50efb48f-d4bb-46ee-9bee-7acb263a16b8.jpeg",
+    "footerBottomLinks": [
+        "Güvenlik",
+        "Gizlilik Politikası",
+        "Kullanım Koşulları"
+    ],
+    "cookiePreferences": "Çerez Tercihleri",
+    "languages": [
+        "TR",
+        "/",
+        "EN"
+    ]
+}

@@ -1,0 +1,94 @@
+{
+    "designer": {
+        "leftCategories": [
+            {
+                "title": "GİYİM",
+                "isLink": false,
+                "subcategories": [
+                    {
+                        "name": "Dış Giyim",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Elbise & Tulum",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Total Look",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Ceket",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Gömlek",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Bluz",
+                        "link": "#"
+                    },
+                    {
+                        "name": "T-Shirt",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Sweatshirt",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Triko",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Pantolon & Jean Pantalon",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Etek",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Bermuda & Şort",
+                        "link": "#"
+                    },
+                    {
+                        "name": "İç Giyim",
+                        "link": "#"
+                    }
+                ]
+            },
+            {
+                "title": "AYAKKABI & ÇANTA",
+                "link": "#"
+            },
+            {
+                "title": "AKSESUAR",
+                "link": "#"
+            },
+            {
+                "title": "MUHTEŞEM HAFTA - %40'a Varan",
+                "link": "#"
+            }
+        ],
+        "rightCategories": [
+            {
+                "name": "AW'25 LOOKBOOK",
+                "link": "#"
+            },
+            {
+                "name": "YILBAŞI HEDİYE ÖNERİLERİ",
+                "link": "#",
+                "style": {
+                    "color": "rgb(212, 66, 62)"
+                }
+            }
+        ],
+        "sideImage": {
+            "src": "assets/sidenavImg/sidebarimg04.jpeg",
+            "alt": "designer",
+            "link": "#"
+        }
+    }
+}

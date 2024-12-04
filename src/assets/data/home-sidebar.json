@@ -1,0 +1,162 @@
+{
+    "home": {
+        "leftCategories": [
+            {
+                "title": "EV DEKORASYONU",
+                "isLink": false,
+                "subcategories": [
+                    {
+                        "name": "Mobilya",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Ofis Aksesuarları",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Dekoratif Ev Aksesuarları",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Hobi Aksesuarları",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Sofra",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Mum & Oda Kokusu",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Banyo Aksesuarları",
+                        "link": "#"
+                    }
+                ]
+            },
+            {
+                "title": "EV TEKSTİLİ",
+                "link": "#",
+                "subcategories": [
+                    {
+                        "name": "Exclusive Line",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Yatak Tekstili",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Masa Tekstili",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Banyo Tekstili",
+                        "link": "#"
+                    }
+                ]
+            },
+            {
+                "title": "YILBAŞI",
+                "link": "#",
+                "style": {
+                    "color": "rgb(212, 66, 62)"
+                },
+                "subcategories": [
+                    {
+                        "name": "Yılbaşı Ağacı",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Yılbaşı Süsü",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Dekorasyon",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Servis Aksesuarı",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Yastık & Throw",
+                        "link": "#"
+                    }
+                ]
+            }
+        ],
+        "rightCategories": [
+            {
+                "title": "CRUISE",
+                "link": "#",
+                "subcategories": [
+                    {
+                        "name": "Tekne Aksesuarları",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Dış Mekan Yastıkları",
+                        "link": "#"
+                    }
+                ]
+            },
+            {
+                "title": "DEKORATİF YASTIKLAR",
+                "link": "#",
+                "subcategories": [
+                    {
+                        "name": "Klasik Dekor Yastıkları",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Sezon Yastıkları",
+                        "link": "#"
+                    }
+                ]
+            },
+            {
+                "title": "EL VE VÜCUT BAKIM",
+                "link": "#"
+            },
+            {
+                "title": "CHRISTOFLE",
+                "link": "#",
+                "subcategories": [
+                    {
+                        "name": "Mum & Şamdan",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Dekoratif Obje",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Çatal & Bıçak Seti",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Sofra Aksesuarları",
+                        "link": "#"
+                    }
+                ]
+            },
+            {
+                "title": "EVLİLİK LİSTESİ KATALOĞU",
+                "link": "#"
+            }
+        ],
+        "bottomCategories": [
+            {
+                "name": "MUHTEŞEM HAFTA - %40'a Varan",
+                "link": "#"
+            }
+        ],
+        "sideImage": {
+            "src": "assets/sidenavImg/sidebarimg07.jpeg",
+            "alt": "home",
+            "link": "#"
+        }
+    }
+}

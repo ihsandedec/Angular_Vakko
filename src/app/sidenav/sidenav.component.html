@@ -1,149 +1,24 @@
 <div [ngClass]="{'sidenav': true, 'open': isOpen}">
 
   <!-- Sidebar Kadın -->
-  <div class="dropdown-menu" *ngIf="activeDropdown === 'women'">
+  <div class="dropdown-menu" *ngIf="activeDropdown === 'women' && womenSidebarData">
     <div class="nav-wrapper js-nav-wrapper">
       <div class="nav-wrapper-node js-wrapper-node">
         <div class="navigation__wrapper__inner js-inner-level2">
           <div class="nav-wrapper-node__top">
+            <!-- Ana kategoriler -->
             <div class="nav-wrapper-node__top__left">
-              <ul class="level2 js-level2">
+              <ul class="level2 js-level2" *ngFor="let category of womenSidebarData.mainCategories">
                 <li>
-                  <div hovercolor="" class="navigation-node-wrapper no-link">
-                    <span class="title-span"> GİYİM </span>
+                  <div *ngIf="category.subCategories.length > 0" hovercolor="" class="navigation-node-wrapper no-link">
+                    <span class="title-span">{{ category.title }}</span>
                   </div>
-                  <div class="wrapper js-wrapper-level2">
+
+                  <div class="wrapper js-wrapper-level2" *ngIf="category.subCategories.length > 0">
                     <ul class="level3 js-level3">
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Dış Giyim </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Elbise & Tulum </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Ceket </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span">Gömlek & Bluz </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Triko </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> T-Shirt & Sweatshirt </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Pantolon </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Etek </span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
-              <ul class="level2 js-level2">
-                <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="title-span"> AKSESUAR </span>
-                  </a>
-                  <div class="wrapper js-wrapper-level2">
-                    <ul class="level3 js-level3">
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Takı </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Şapka </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Kemer </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Şal </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Atkı & Bere </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Eldiven </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Şemsiye </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Çorap </span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
-              <ul class="level2 js-level2">
-                <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="title-span"> EŞARP & ŞAL KOLEKSİYONU </span>
-                  </a>
-                  <div class="wrapper js-wrapper-level2">
-                    <ul class="level3 js-level3">
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Eşarp </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Şal </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Fular & Gavroş & Bandana </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Çağdaş Türk Sanatçıları Koleksiyonu </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> İsme Özel Eşarp </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Kendi Eşarbını Tasarla </span>
+                      <li *ngFor="let subCategory of category.subCategories">
+                        <a class="navigation-node-wrapper" [href]="subCategory.link">
+                          <span class="sub-span">{{ subCategory.name }}</span>
                         </a>
                       </li>
                     </ul>
@@ -151,320 +26,138 @@
                 </li>
               </ul>
             </div>
+            <!-- Lookbook ve Sağ Menü -->
             <div class="nav-wrapper-node__top__right">
-              <ul class="level2 js-level2">
+              <ul class="level2 js-level2" *ngFor="let lookbook of womenSidebarData.lookbooks ">
                 <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="right-span"> AW'25 LOOKBOOK </span>
+                  <a class="navigation-node-wrapper" [href]="lookbook.link">
+                    <span class="right-span" [ngStyle]="lookbook.style || {}">{{ lookbook.name }} </span>
                   </a>
                 </li>
               </ul>
-              <ul class="level2 js-level2">
-                <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="right-span"> AW ’25 URBAN GLAM </span>
-                  </a>
-                </li>
-              </ul>
-              <ul class="level2 js-level2">
-                <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="right-span"> AW ’25 GLAMOUR </span>
-                  </a>
-                </li>
-              </ul>
-              <ul class="level2 js-level2">
-                <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="right-span"> AW ’25 SILENT CHIC </span>
-                  </a>
-                </li>
-              </ul>
-              <ul class="level2 js-level2">
-                <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="right-span"> AW ’25 COOL CASUAL </span>
-                  </a>
-                </li>
-              </ul>
-              <ul class="level2 js-level2">
-                <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="right-span" style="color: rgb(212, 66, 62);" > HAPPY NEW YEAR </span>
-                  </a>
-                </li>
-              </ul>
-
-
             </div>
           </div>
+          <!-- Özel Teklifler -->
           <div class="nav-wrapper-node__bottom">
-            <ul class="level2 js-level2">
+            <ul class="level2 js-level2" *ngFor="let offer of womenSidebarData.specialOffers">
               <li>
-                <a class="navigation-node-wrapper" href="#">
-                  <span class="right-span"> MUHTEŞEM HAFTA - %40'a Varan </span>
+                <a class="navigation-node-wrapper" [href]="offer.link">
+                  <span class="right-span" [ngStyle]="offer">
+                    {{ offer.name }}
+                  </span>
                 </a>
-                <div class="wrapper js-wrapper-level2"></div>
-              </li>
-              <li>
-                <a class="navigation-node-wrapper" href="#">
-                  <span class="right-span"> 5000 TL ÜZERİ SEÇİLİ ÜRÜNLERDE 1000 TL İNDİRİM </span>
-
-                </a>
-                <div class="wrapper js-wrapper-level2"></div>
               </li>
             </ul>
           </div>
         </div>
       </div>
-      <div class="nav-wrapper__image">
-        <a href="#">
-          <img class="drop-img" src="assets/sidenavImg/sidebarimg01.jpeg" alt="Women">
+      <!-- Görsel -->
+      <div class="nav-wrapper__image" *ngIf="womenSidebarData.sidebarImage">
+        <a [href]="womenSidebarData.sidebarImage.link">
+          <img class="drop-img" [src]="womenSidebarData.sidebarImage.src" [alt]="womenSidebarData.sidebarImage.alt">
         </a>
       </div>
     </div>
   </div>
+
   <!-- Sidebar Erkek -->
-  <div class="dropdown-menu" *ngIf="activeDropdown === 'men'">
+  <div class="dropdown-menu" *ngIf="activeDropdown === 'men' && menSidebarData">
     <div class="nav-wrapper js-nav-wrapper">
       <div class="nav-wrapper-node js-wrapper-node">
         <div class="navigation__wrapper__inner js-inner-level2">
           <div class="nav-wrapper-node__top">
+            <!-- Ana kategoriler -->
             <div class="nav-wrapper-node__top__left">
-              <ul class="level2 js-level2">
+              <ul class="level2 js-level2" *ngFor="let category of menSidebarData.mainCategories">
                 <li>
-                  <div hovercolor="" class="navigation-node-wrapper no-link">
-                    <span class="title-span"> GİYİM </span>
+                  <div *ngIf="category.subCategories.length > 0" hovercolor="" class="navigation-node-wrapper no-link">
+                    <span class="title-span">{{ category.title }}</span>
                   </div>
-                  <div class="wrapper js-wrapper-level2">
+
+                  <div class="wrapper js-wrapper-level2" *ngIf="category.subCategories.length > 0">
                     <ul class="level3 js-level3">
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Dış Giyim </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Ceket </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Takım Elbise </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Smokin </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Gömlek </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> T-Shirt & Sweatshirt </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Triko </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Pantolon </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> İç Giyim </span>
+                      <li *ngFor="let subCategory of category.subCategories">
+                        <a class="navigation-node-wrapper" [href]="subCategory.link">
+                          <span class="sub-span">{{ subCategory.name }}</span>
                         </a>
                       </li>
                     </ul>
                   </div>
                 </li>
               </ul>
-              <ul class="level2 js-level2">
+            </div>
+            <!-- Lookbook ve Sağ Menü -->
+            <div class="nav-wrapper-node__top__right">
+              <ul class="level2 js-level2" *ngFor="let lookbook of menSidebarData.lookbooks">
                 <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="title-span"> AKSESUAR </span>
+                  <a class="navigation-node-wrapper" [href]="lookbook.link">
+                    <span class="right-span" [ngStyle]="lookbook.style || {}">{{ lookbook.name }}</span>
                   </a>
-                  <div class="wrapper js-wrapper-level2">
-                    <ul class="level3 js-level3">
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Kravat </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Mendil </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Papyon </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Kemer </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Çorap </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Bileklik </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Kol Düğmesi </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Şapka </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Kaşkol </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Eldiven </span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
                 </li>
               </ul>
 
             </div>
-            <div class="nav-wrapper-node__top__right">
-              <ul class="level2 js-level2">
-                <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="right-span"> AW'25 LOOKBOOK </span>
-                  </a>
-                </li>
-              </ul>
-              <ul class="level2 js-level2">
-                <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="right-span" style="color: rgb(212, 66, 62);" > YILBAŞI HEDİYE ÖNERİLERİ </span>
-                  </a>
-                </li>
-              </ul>
-            </div>
           </div>
+          <!-- Özel Teklifler -->
           <div class="nav-wrapper-node__bottom">
-            <ul class="level2 js-level2">
+            <ul class="level2 js-level2" *ngFor="let offer of menSidebarData.specialOffers">
               <li>
-                <a class="navigation-node-wrapper" href="#">
-                  <span class="right-span"> MUHTEŞEM HAFTA - %40'a Varan </span>
+                <a class="navigation-node-wrapper" [href]="offer.link">
+                  <span class="right-span">
+                    {{ offer.name }}
+                  </span>
                 </a>
-                <div class="wrapper js-wrapper-level2"></div>
-              </li>
-              <li>
-                <a class="navigation-node-wrapper" href="#">
-                  <span class="right-span">5000 TL ÜZERİ SEÇİLİ ÜRÜNLERDE 1000 TL İNDİRİM </span>
-                </a>
-                <div class="wrapper js-wrapper-level2"></div>
               </li>
             </ul>
           </div>
         </div>
       </div>
-      <div class="nav-wrapper__image">
-        <a href="#">
-          <img class="drop-img" src="assets/sidenavImg/sidebarimg02.jpeg" alt="Men">
+      <!-- Yan Görsel -->
+      <div class="nav-wrapper__image" *ngIf="menSidebarData.sidebarImage">
+        <a [href]="menSidebarData.sidebarImage.link">
+          <img class="drop-img" [src]="menSidebarData.sidebarImage.src" [alt]="menSidebarData.sidebarImage.alt">
         </a>
       </div>
     </div>
   </div>
   <!-- Sidebar Shoes&Bags -->
-  <div class="dropdown-menu" *ngIf="activeDropdown === 'shoesBags'">
+  <div class="dropdown-menu" *ngIf="activeDropdown === 'shoesBags' && bagsSidebarData">
     <div class="nav-wrapper js-nav-wrapper">
       <div class="nav-wrapper-node js-wrapper-node">
         <div class="navigation__wrapper__inner js-inner-level2">
           <div class="nav-wrapper-node__top">
+            <!-- Ana kategoriler -->
             <div class="nav-wrapper-node__top__left">
-              <ul class="level2 js-level2">
+              <ul class="level2 js-level2" *ngFor="let category of bagsSidebarData.shoesBags.categories">
                 <li>
-                  <div hovercolor="" class="navigation-node-wrapper">
-                    <span class="title-span"> KADIN </span>
+                  <div *ngIf="category.subCategories.length > 0" hovercolor="" class="navigation-node-wrapper no-link">
+                    <span class="title-span">{{ category.title }}</span>
                   </div>
-                  <div class="wrapper js-wrapper-level2">
+
+                  <div class="wrapper js-wrapper-level2" *ngIf="category.subCategories.length > 0">
                     <ul class="level3 js-level3">
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Ayakkabı </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Çanta </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Cüzdan </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> V2K Designers Ayakkabı & Çanta </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Monogram </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Monogram Initials Koleksiyonu </span>
+                      <li *ngFor="let subCategory of category.subCategories">
+                        <a class="navigation-node-wrapper" [href]="subCategory.link">
+                          <span class="sub-span">{{ subCategory.name }}</span>
                         </a>
                       </li>
                     </ul>
                   </div>
                 </li>
               </ul>
-              <ul class="level2 js-level2">
+            </div>
+            <!-- Lookbook ve Sağ Menü -->
+            <div class="nav-wrapper-node__top__right">
+              <ul class="level2 js-level2" *ngFor="let bagsman of bagsSidebarData.shoesBags.lookbooks">
                 <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="title-span"> ERKEK </span>
-                  </a>
+                  <div class="navigation-node-wrapper no-link">
+                    <span class="title-span">{{ bagsman.title }}</span>
+                  </div>
                   <div class="wrapper js-wrapper-level2">
                     <ul class="level3 js-level3">
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Ayakkabı </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Çanta </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Monogram </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span" style="color: rgb(212, 66, 62);" > YILBAŞI HEDİYE ÖNERİLERİ </span>
+                      <li *ngFor="let subCategory of bagsman.subCategories">
+                        <a class="navigation-node-wrapper" [href]="subCategory.link">
+                          <span class="sub-span" [ngStyle]="subCategory.style || {}">{{ subCategory.name }}</span>
                         </a>
                       </li>
                     </ul>
@@ -473,146 +166,64 @@
               </ul>
             </div>
           </div>
+
+          <!-- Özel Teklifler -->
           <div class="nav-wrapper-node__bottom">
-            <ul class="level2 js-level2">
+            <ul class="level2 js-level2" *ngFor="let offer of bagsSidebarData.shoesBags.specialOffers">
               <li>
-                <a class="navigation-node-wrapper" href="#">
-                  <span class="right-span"> MUHTEŞEM HAFTA - %40'a Varan </span>
+                <a class="navigation-node-wrapper" [href]="offer.link">
+                  <span class="right-span">
+                    {{ offer.name }}
+                  </span>
                 </a>
-                <div class="wrapper js-wrapper-level2"></div>
-              </li>
-              <li>
-                <a class="navigation-node-wrapper" href="#">
-                  <span class="right-span">5000 TL ÜZERİ SEÇİLİ ÜRÜNLERDE 1000 TL İNDİRİM </span>
-                </a>
-                <div class="wrapper js-wrapper-level2"></div>
               </li>
             </ul>
           </div>
+
         </div>
       </div>
-      <div class="nav-wrapper__image">
-        <a href="#">
-          <img class="drop-img" src="assets/sidenavImg/sidebarimg03.jpeg" alt="ShoesBags">
+      <!-- Yan Görsel -->
+      <div class="nav-wrapper__image" *ngIf="bagsSidebarData.shoesBags.sideImage">
+        <a [href]="bagsSidebarData.shoesBags.sideImage.link">
+          <img class="drop-img" [src]="bagsSidebarData.shoesBags.sideImage.src"
+            [alt]="bagsSidebarData.shoesBags.sideImage.alt">
         </a>
       </div>
     </div>
   </div>
+
   <!-- Sidebar V2k DESIGNERS -->
-  <div class="dropdown-menu" *ngIf="activeDropdown === 'designer'">
+  <div class="dropdown-menu" *ngIf="activeDropdown === 'designer' && v2kSidebarData">
     <div class="nav-wrapper js-nav-wrapper">
       <div class="nav-wrapper-node js-wrapper-node">
         <div class="navigation__wrapper__inner js-inner-level2">
           <div class="nav-wrapper-node__top">
+            <!-- Ana kategoriler -->
             <div class="nav-wrapper-node__top__left">
-              <ul class="level2 js-level2">
+              <ul class="level2 js-level2" *ngFor="let category of v2kSidebarData.designer.leftCategories">
                 <li>
-                  <div hovercolor="" class="navigation-node-wrapper no-link">
-                    <span class="title-span"> GİYİM </span>
+                  <div class="navigation-node-wrapper no-link">
+                    <span class="title-span">{{ category.title }}</span>
                   </div>
+
                   <div class="wrapper js-wrapper-level2">
                     <ul class="level3 js-level3">
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Dış gİYİM </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Elbise & Tulum </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Total Look </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Ceket </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Gömlek </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Bluz </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> T-Shirt </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Sweatshirt </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Triko </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Pantolon & Jean Pantalon </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Etek </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Bermuda & Şort </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> İç Giyim </span>
+                      <li *ngFor="let subCategory of category.subcategories">
+                        <a class="navigation-node-wrapper" [href]="subCategory.link">
+                          <span class="sub-span">{{ subCategory.name }}</span>
                         </a>
                       </li>
                     </ul>
                   </div>
                 </li>
               </ul>
-              <ul class="level2 js-level2">
-                <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="title-span"> AYAKKABI & ÇANTA </span>
-                  </a>
-                </li>
-              </ul>
-              <ul class="level2 js-level2">
-                <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="title-span"> AKSESUAR </span>
-                  </a>
-                </li>
-              </ul>
-              <ul class="level2 js-level2">
-                <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="title-span"> MUHTEŞEM HAFTA - %40'a Varan </span>
-                  </a>
-                </li>
-              </ul>
             </div>
+            <!-- Lookbook ve Sağ Menü -->
             <div class="nav-wrapper-node__top__right">
-              <ul class="level2 js-level2">
+              <ul class="level2 js-level2" *ngFor="let lookbook of v2kSidebarData.designer.rightCategories">
                 <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="right-span">AW'25 LOOKBOOK </span>
-                  </a>
-                </li>
-                <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="right-span" style="color: rgb(212, 66, 62);" >YILBAŞI HEDİYE ÖNERİLERİ </span>
+                  <a class="navigation-node-wrapper" [href]="lookbook.link">
+                    <span class="right-span" [ngStyle]="lookbook.style || {}">{{ lookbook.name }}</span>
                   </a>
                 </li>
               </ul>
@@ -628,51 +239,40 @@
       </div>
     </div>
   </div>
+
   <!-- Sidebar Couture -->
-  <div class="dropdown-menu" *ngIf="activeDropdown === 'couture'">
+  <div class="dropdown-menu" *ngIf="activeDropdown === 'couture' && coutureSidebarData">
     <div class="nav-wrapper js-nav-wrapper">
       <div class="nav-wrapper-node js-wrapper-node">
         <div class="navigation__wrapper__inner js-inner-level2">
           <div class="nav-wrapper-node__top">
+            <!-- Ana kategoriler -->
             <div class="nav-wrapper-node__top__left">
-
-              <ul class="level2 js-level2">
+              <ul *ngFor="let category of coutureSidebarData.couture.leftCategories" class="level2 js-level2">
                 <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="title-span"> ELBİSE </span>
-                  </a>
-                </li>
-              </ul>
-              <ul class="level2 js-level2">
-                <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="title-span"> KOKTEYL ELBİSE </span>
+                  <a class="navigation-node-wrapper" [href]="category.link">
+                    <span class="title-span">{{ category.title }}</span>
                   </a>
                 </li>
               </ul>
             </div>
             <div class="nav-wrapper-node__top__right">
-              <ul class="level2 js-level2">
+              <ul *ngFor="let rightCategory of coutureSidebarData.couture.rightCategories" class="level2 js-level2">
                 <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="right-span"> AKSESUAR </span>
-                  </a>
-                </li>
-              </ul>
-              <ul class="level2 js-level2">
-                <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="right-span" style="color: rgb(212, 66, 62);" > YILBAŞI KOLEKSİYONU </span>
+                  <a class="navigation-node-wrapper" [href]="rightCategory.link">
+                    <span class="right-span" [ngStyle]="rightCategory.style">
+                      {{ rightCategory.name }}
+                    </span>
                   </a>
                 </li>
               </ul>
             </div>
           </div>
-          <div class="nav-wrapper-node__bottom">
+          <div class="nav-wrapper-node__bottom" *ngIf="coutureSidebarData.couture.bottomCategories">
             <ul class="level2 js-level2">
-              <li>
-                <a class="navigation-node-wrapper" href="#">
-                  <span class="right-span">MUHTEŞEM HAFTA - %40'a Varan </span>
+              <li *ngFor="let bottomCategory of coutureSidebarData.couture.bottomCategories">
+                <a class="navigation-node-wrapper" [href]="bottomCategory.link">
+                  <span class="right-span">{{ bottomCategory.name }}</span>
                 </a>
                 <div class="wrapper js-wrapper-level2"></div>
               </li>
@@ -680,13 +280,15 @@
           </div>
         </div>
       </div>
-      <div class="nav-wrapper__image">
-        <a href="#">
-          <img class="drop-img" src="assets/sidenavImg/sidebarimg05.jpeg" alt="couture">
+      <div class="nav-wrapper__image" *ngIf="coutureSidebarData.couture.sideImage">
+        <a [href]="coutureSidebarData.couture.sideImage.link">
+          <img class="drop-img" [src]="coutureSidebarData.couture.sideImage.src"
+            [alt]="coutureSidebarData.couture.sideImage.alt">
         </a>
       </div>
     </div>
   </div>
+
   <!-- Sidebar Wedding -->
   <div class="dropdown-menu-onlyImg" *ngIf="activeDropdown === 'wedding'">
     <div class="nav-wrapper__image">
@@ -695,120 +297,30 @@
       </a>
     </div>
   </div>
+
   <!-- Sidebar Home -->
-  <div class="dropdown-menu" *ngIf="activeDropdown === 'home'">
+  <div class="dropdown-menu" *ngIf="activeDropdown === 'home' && homeSidebarData">
     <div class="nav-wrapper js-nav-wrapper">
       <div class="nav-wrapper-node js-wrapper-node">
         <div class="navigation__wrapper__inner js-inner-level2">
           <div class="nav-wrapper-node__top">
+            <!-- Ana kategoriler -->
             <div class="nav-wrapper-node__top__left">
-              <ul class="level2 js-level2">
+              <ul *ngFor="let category of homeSidebarData.home.leftCategories" class="level2 js-level2">
                 <li>
-                  <div hovercolor="" class="navigation-node-wrapper no-link">
-                    <span class="title-span"> EV DEKORASYONU </span>
+                  <div *ngIf="!category.link" class="navigation-node-wrapper no-link">
+                    <span class="title-span">{{ category.title }}</span>
                   </div>
-                  <div class="wrapper js-wrapper-level2">
-                    <ul class="level3 js-level3">
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Mobilya </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Ofis Aksesuarları </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Dekoratif Ev Aksesuarları </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Hobi Aksesuarları </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Sofra </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Mum & Oda Kokusu </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Banyo Aksesuarları </span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
-              <ul class="level2 js-level2">
-                <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="title-span"> EV TEKSTİLİ </span>
+                  <a *ngIf="category.link" class="navigation-node-wrapper" [href]="category.link"
+                    [ngStyle]="category.style">
+                    <span class="title-span">{{ category.title }}</span>
                   </a>
-                  <div class="wrapper js-wrapper-level2">
+
+                  <div *ngIf="category.subcategories" class="wrapper js-wrapper-level2">
                     <ul class="level3 js-level3">
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Exclusive Line </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Yatak Tekstili </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Masa Tekstili </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Banyo Tekstili </span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
-              <ul class="level2 js-level2">
-                <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="title-span" style="color: rgb(212, 66, 62);" > YILBAŞI </span>
-                  </a>
-                  <div class="wrapper js-wrapper-level2">
-                    <ul class="level3 js-level3">
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Yılbaşı Ağacı </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span">Yılbaşı Süsü </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Dekorasyon </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span">Servis Aksesuarı</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span">Yastık & Throw</span>
+                      <li *ngFor="let subcategory of category.subcategories">
+                        <a class="navigation-node-wrapper" [href]="subcategory.link">
+                          <span class="sub-span">{{ subcategory.name }}</span>
                         </a>
                       </li>
                     </ul>
@@ -817,100 +329,31 @@
               </ul>
             </div>
             <div class="nav-wrapper-node__top__right">
-              <ul class="level2 js-level2">
+              <ul *ngFor="let rightCategory of homeSidebarData.home.rightCategories" class="level2 js-level2">
                 <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="title-span"> CRUISE </span>
+                  <a class="navigation-node-wrapper" [href]="rightCategory.link">
+                    <span class="title-span">{{ rightCategory.title }}</span>
                   </a>
-                  <div class="wrapper js-wrapper-level2">
+
+                  <div *ngIf="rightCategory.subcategories" class="wrapper js-wrapper-level2">
                     <ul class="level3 js-level3">
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Tekne Aksesuarları </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Dış Mekan Yastıkları </span>
+                      <li *ngFor="let subcategory of rightCategory.subcategories">
+                        <a class="navigation-node-wrapper" [href]="subcategory.link">
+                          <span class="sub-span">{{ subcategory.name }}</span>
                         </a>
                       </li>
                     </ul>
                   </div>
-                </li>
-              </ul>
-              <ul class="level2 js-level2">
-                <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="title-span"> DEKORATİF YASTIKLAR </span>
-                  </a>
-                  <div class="wrapper js-wrapper-level2">
-                    <ul class="level3 js-level3">
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Klasik Dekor Yastıkları </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Sezon Yastıkları </span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
-              <ul class="level2 js-level2">
-                <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="title-span"> EL VE VÜCUT BAKIM </span>
-                  </a>
-                </li>
-              </ul>
-              <ul class="level2 js-level2">
-                <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="title-span"> CHRISTOFLE </span>
-                  </a>
-                  <div class="wrapper js-wrapper-level2">
-                    <ul class="level3 js-level3">
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Mum & Şamdan </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Dekoratif Obje </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Çatal & Bıçak Seti </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Sofra Aksesuarları </span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
-              <ul class="level2 js-level2">
-                <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="title-span"> EVLİLİK LİSTESİ KATALOĞU </span>
-                  </a>
                 </li>
               </ul>
             </div>
           </div>
-          <div class="nav-wrapper-node__bottom">
+          <!-- Özel Teklifler -->
+          <div class="nav-wrapper-node__bottom" *ngIf="homeSidebarData.home.bottomCategories">
             <ul class="level2 js-level2">
-              <li>
-                <a class="navigation-node-wrapper" href="#">
-                  <span class="right-span"> MUHTEŞEM HAFTA - %40'a Varan </span>
+              <li *ngFor="let bottomCategory of homeSidebarData.home.bottomCategories">
+                <a class="navigation-node-wrapper" [href]="bottomCategory.link">
+                  <span class="right-span">{{ bottomCategory.name }}</span>
                 </a>
                 <div class="wrapper js-wrapper-level2"></div>
               </li>
@@ -918,117 +361,33 @@
           </div>
         </div>
       </div>
-      <div class="nav-wrapper__image">
-        <a href="#">
-          <img class="drop-img" src="assets/sidenavImg/sidebarimg07.jpeg" alt="home">
+      <div class="nav-wrapper__image" *ngIf="homeSidebarData.home.sideImage">
+        <a [href]="homeSidebarData.home.sideImage.link">
+          <img class="drop-img" [src]="homeSidebarData.home.sideImage.src" [alt]="homeSidebarData.home.sideImage.alt">
         </a>
       </div>
     </div>
   </div>
+
   <!-- Sidebar Kozmetik -->
-  <div class="dropdown-menu" *ngIf="activeDropdown === 'kozmetik'">
+  <div class="dropdown-menu" *ngIf="activeDropdown === 'kozmetik' && cosmeticSidebarData">
     <div class="nav-wrapper js-nav-wrapper">
       <div class="nav-wrapper-node js-wrapper-node">
         <div class="navigation__wrapper__inner js-inner-level2">
           <div class="nav-wrapper-node__top">
+            <!-- Ana kategoriler -->
             <div class="nav-wrapper-node__top__left">
-              <ul class="level2 js-level2">
+              <ul class="level2 js-level2" *ngFor="let category of cosmeticSidebarData.kozmetik.leftCategories">
                 <li>
-                  <div hovercolor="" class="navigation-node-wrapper no-link">
-                    <span class="title-span"> ERKEK PARFÜM </span>
+                  <div *ngIf="category.subcategories.length > 0 " hovercolor="" class="navigation-node-wrapper no-link">
+                    <span class="title-span">{{ category.title }}</span>
                   </div>
-                  <div class="wrapper js-wrapper-level2">
+
+                  <div class="wrapper js-wrapper-level2" *ngIf="category.subcategories.length > 0">
                     <ul class="level3 js-level3">
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Infiniti For Him </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Infiniti For Him 2'li Set </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> V De Vakko </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span">Infiniti For Us </span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
-              <ul class="level2 js-level2">
-                <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="title-span"> KADIN PARFÜM </span>
-                  </a>
-                  <div class="wrapper js-wrapper-level2">
-                    <ul class="level3 js-level3">
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Infinity For Her </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Infinity For Her Glam </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Infinity For Her Grey </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Infinity For Us </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Katia </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Infinity For Her 2'li Set </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Infinity For Her 3'lü Set </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Infinity For Her Body Mist </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Katia 2'li Set </span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
-              <ul class="level2 js-level2">
-                <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="title-span"> UNISEX PARFÜM </span>
-                  </a>
-                  <div class="wrapper js-wrapper-level2">
-                    <ul class="level3 js-level3">
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Infinity For Us </span>
+                      <li *ngFor="let subCategory of category.subcategories">
+                        <a class="navigation-node-wrapper" [href]="subCategory.link">
+                          <span class="sub-span">{{ subCategory.name }}</span>
                         </a>
                       </li>
                     </ul>
@@ -1036,122 +395,23 @@
                 </li>
               </ul>
             </div>
+            <!-- Lookbook ve Sağ Menü -->
             <div class="nav-wrapper-node__top__right">
-              <ul class="level2 js-level2">
+              <ul class="level2 js-level2" *ngFor="let category of cosmeticSidebarData.kozmetik.rightCategories">
                 <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="title-span"> HEDİYE SETLERİ </span>
+                  <a class="navigation-node-wrapper" [href]="category.link">
+                    <span class="right-span">{{ category.title }}</span>
                   </a>
-                  <div class="wrapper js-wrapper-level2">
+
+                  <div *ngIf="category.subcategories" class="wrapper js-wrapper-level2">
                     <ul class="level3 js-level3">
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Kadın Hediye Setleri </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Erkek Hediye Setleri </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Kolonya Hediye Setleri </span>
+                      <li *ngFor="let subcategory of category.subcategories">
+                        <a class="navigation-node-wrapper" [href]="subcategory.link">
+                          <span class="sub-span">{{ subcategory.name }}</span>
                         </a>
                       </li>
                     </ul>
                   </div>
-                </li>
-              </ul>
-              <ul class="level2 js-level2">
-                <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="title-span"> KOLONYA </span>
-                  </a>
-                  <div class="wrapper js-wrapper-level2">
-                    <ul class="level3 js-level3">
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Riga Amber </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Bois De Cedre Atlas </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Marine Imperial </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Citrus </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Leather </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Blue Suede </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Tangerine & Manderine </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Atmosphere </span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
-              <ul class="level2 js-level2">
-                <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="title-span"> OJE </span>
-                  </a>
-                </li>
-              </ul>
-              <ul class="level2 js-level2">
-                <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="title-span"> EL VE VÜCUT BAKIM </span>
-                  </a>
-                  <div class="wrapper js-wrapper-level2">
-                    <ul class="level3 js-level3">
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Sıvı Sabunlar </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Sabunlar </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Body Mist </span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
-              <ul class="level2 js-level2">
-                <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="title-span" style="color: rgb(212, 66, 62);" > YILBAŞI HEDİYE ÖNERİLERİ </span>
-                  </a>
                 </li>
               </ul>
             </div>
@@ -1159,94 +419,53 @@
 
         </div>
       </div>
-      <div class="nav-wrapper__image">
-        <a href="#">
-          <img class="drop-img" src="assets/sidenavImg/sidebarimg08.jpeg" alt="kozmetik">
+      <div class="nav-wrapper__image" *ngIf="cosmeticSidebarData.kozmetik.sideImage">
+        <a [href]="cosmeticSidebarData.kozmetik.sideImage.link">
+          <img class="drop-img" [src]="cosmeticSidebarData.kozmetik.sideImage.src"
+            [alt]="cosmeticSidebarData.kozmetik.sideImage.alt">
         </a>
       </div>
     </div>
   </div>
   <!-- Sidebar Chocolate -->
-  <div class="dropdown-menu" *ngIf="activeDropdown === 'latelier'">
+  <div class="dropdown-menu" *ngIf="activeDropdown === 'latelier' && latelierSidebarData">
     <div class="nav-wrapper js-nav-wrapper">
       <div class="nav-wrapper-node js-wrapper-node">
         <div class="navigation__wrapper__inner js-inner-level2">
           <div class="nav-wrapper-node__top">
+            <!-- Ana kategoriler -->
             <div class="nav-wrapper-node__top__left">
-              <ul class="level2 js-level2">
-                <li>
-                  <div hovercolor="" class="navigation-node-wrapper no-link">
-                    <span class="title-span"> ÇİKOLATALAR </span>
-                  </div>
-                  <div class="wrapper js-wrapper-level2">
-                    <ul class="level3 js-level3">
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Klasik Çikolatalar </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> El Yapımı Çikolatalar </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Atıştırmalık Çikolatalar </span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
+              <ul class="level2 js-level2" *ngFor="let category of latelierSidebarData.latelier.leftCategories">
+                <li *ngFor="let subCategory of category.subcategories">
+                  <a class="navigation-node-wrapper" [href]="subCategory.link">
+                    <span class="title-span">{{ subCategory.name }}</span>
+                  </a>
                 </li>
               </ul>
             </div>
             <div class="nav-wrapper-node__top__right">
-              <ul class="level2 js-level2">
+              <ul *ngFor="let rightCategory of latelierSidebarData.latelier.rightCategories" class="level2 js-level2">
                 <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="right-span"> PATİSSERİE </span>
+                  <a class="navigation-node-wrapper" [href]="rightCategory.link">
+                    <span class="right-span" [ngStyle]="rightCategory.style">
+                      {{ rightCategory.title }}
+                    </span>
                   </a>
                 </li>
-                <ul class="level2 js-level2">
-                  <li>
-                    <a class="navigation-node-wrapper" href="#">
-                      <span class="right-span"> DELİGHT </span>
-                    </a>
-                  </li>
-                </ul>
-                <ul class="level2 js-level2">
-                  <li>
-                    <a class="navigation-node-wrapper" href="#">
-                      <span class="right-span"> ICE CREAM </span>
-                    </a>
-                  </li>
-                </ul>
-                <ul class="level2 js-level2">
-                  <li>
-                    <a class="navigation-node-wrapper" href="#">
-                      <span class="right-span"> BİSTROT </span>
-                    </a>
-                  </li>
-                </ul>
-                <ul class="level2 js-level2">
-                  <li>
-                    <a class="navigation-node-wrapper" href="#">
-                      <span class="right-span" style="color: rgb(212, 66, 62);" > YILBAŞI HEDİYE ÖNERİLERİ </span>
-                    </a>
-                  </li>
-                </ul>
               </ul>
             </div>
           </div>
         </div>
       </div>
-      <div class="nav-wrapper__image">
-        <a href="#">
-          <img class="drop-img" src="assets/sidenavImg/sidebarimg09.jpeg" alt="latelier">
+      <div class="nav-wrapper__image" *ngIf="latelierSidebarData.latelier.sideImage">
+        <a [href]="latelierSidebarData.latelier.sideImage.link">
+          <img class="drop-img" [src]="latelierSidebarData.latelier.sideImage.src"
+            [alt]="latelierSidebarData.latelier.sideImage.alt">
         </a>
       </div>
     </div>
   </div>
+
   <!-- Sidebar Vakkorama -->
   <div class="dropdown-menu-onlyImg" *ngIf="activeDropdown === 'vakkorama'">
     <div class="nav-wrapper__image">
@@ -1255,6 +474,7 @@
       </a>
     </div>
   </div>
+
   <!-- Sidebar Hotels -->
   <div class="dropdown-menu-onlyImg" *ngIf="activeDropdown === 'hotel'">
     <div class="nav-wrapper__image">
@@ -1263,96 +483,26 @@
       </a>
     </div>
   </div>
+
   <!-- Sidebar OUTLET -->
-  <div class="dropdown-menu" *ngIf="activeDropdown === 'outlet'">
+  <div class="dropdown-menu" *ngIf="activeDropdown === 'outlet' && outletSidebarData">
     <div class="nav-wrapper js-nav-wrapper">
       <div class="nav-wrapper-node js-wrapper-node">
         <div class="navigation__wrapper__inner js-inner-level2">
           <div class="nav-wrapper-node__top">
+            <!-- Ana kategoriler -->
             <div class="nav-wrapper-node__top__left">
-              <ul class="level2 js-level2">
+              <ul class="level2 js-level2" *ngFor="let category of outletSidebarData.outlet.leftCategories">
                 <li>
-                  <div hovercolor="" class="navigation-node-wrapper no-link">
-                    <span class="title-span"> KADIN </span>
+                  <div class="navigation-node-wrapper no-link">
+                    <span class="title-span">{{ category.title }}</span>
                   </div>
+
                   <div class="wrapper js-wrapper-level2">
                     <ul class="level3 js-level3">
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Giyim </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Aksesuar </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Eşarp & Şal Koleksiyonu </span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
-              <ul class="level2 js-level2">
-                <li>
-                  <div hovercolor="" class="navigation-node-wrapper no-link">
-                    <span class="title-span"> ERKEK </span>
-                  </div>
-                  <div class="wrapper js-wrapper-level2">
-                    <ul class="level3 js-level3">
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Giyim </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Aksesuar </span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
-              <ul class="level2 js-level2">
-                <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="title-span"> SHOES & BAGS </span>
-                  </a>
-                  <div class="wrapper js-wrapper-level2">
-                    <ul class="level3 js-level3">
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Kadın </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Erkek </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Monogram </span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
-              <ul class="level2 js-level2">
-                <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="title-span"> COUTURE </span>
-                  </a>
-                  <div class="wrapper js-wrapper-level2">
-                    <ul class="level3 js-level3">
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Elbise </span>
+                      <li *ngFor="let subCategory of category.subcategories">
+                        <a class="navigation-node-wrapper" [href]="subCategory.link">
+                          <span class="sub-span">{{ subCategory.name }}</span>
                         </a>
                       </li>
                     </ul>
@@ -1360,79 +510,20 @@
                 </li>
               </ul>
             </div>
+
+            <!-- Sağ Menü -->
             <div class="nav-wrapper-node__top__right">
-              <ul class="level2 js-level2">
+              <ul class="level2 js-level2" *ngFor="let lookbook of outletSidebarData.outlet.rightCategories">
                 <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="title-span"> V2K DESIGNERS </span>
-                  </a>
-                  <div class="wrapper js-wrapper-level2">
-                    <ul class="level3 js-level3">
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Kadın </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Erkek </span>
-                        </a>
-                      </li>
-                    </ul>
+                  <div class="navigation-node-wrapper no-link">
+                    <span class="title-span">{{ lookbook.title }}</span>
                   </div>
-                </li>
-              </ul>
-              <ul class="level2 js-level2">
-                <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="title-span"> MARE </span>
-                  </a>
+
                   <div class="wrapper js-wrapper-level2">
                     <ul class="level3 js-level3">
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Plaj Giyim </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Mayo & Bikini </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Sandalet & Terlik </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Aksesuar </span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
-              <ul class="level2 js-level2">
-                <li>
-                  <a class="navigation-node-wrapper" href="#">
-                    <span class="title-span"> HOME </span>
-                  </a>
-                  <div class="wrapper js-wrapper-level2">
-                    <ul class="level3 js-level3">
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Ev Dekorasyonu </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Ev Tekstili </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> Dekoratif Yastıklar </span>
+                      <li *ngFor="let subLookbook of lookbook.subcategories">
+                        <a class="navigation-node-wrapper" [href]="subLookbook.link">
+                          <span class="sub-span">{{ subLookbook.name }}</span>
                         </a>
                       </li>
                     </ul>
@@ -1441,68 +532,52 @@
               </ul>
             </div>
           </div>
+          <!-- Özel Teklifler -->
           <div class="nav-wrapper-node__bottom">
-            
-            <ul class="level2 js-level2" style="margin:0">
+            <ul class="level2 js-level2" *ngFor="let offer of outletSidebarData.outlet.bottomCategories">
               <li>
-                <a class="navigation-node-wrapper" href="#">
-                  <span class="right-span"> 4000 TL VE ÜZERİNE ÖZEL İNDİRİM </span>
+                <a class="navigation-node-wrapper" [href]="offer.link">
+                  <span class="right-span">
+                    {{ offer.title }}
+                  </span>
                 </a>
-                <div class="wrapper js-wrapper-level2"></div>
               </li>
             </ul>
           </div>
         </div>
       </div>
-      <div class="nav-wrapper__image">
-        <a href="#">
-          <img class="drop-img" src="assets/sidenavImg/sidebarimg12.jpeg" alt="outlet">
+      <!-- Yan Görsel -->
+      <div class="nav-wrapper__image" *ngIf="outletSidebarData.outlet.sideImage">
+        <a [href]="outletSidebarData.outlet.sideImage.link">
+          <img class="drop-img" [src]="outletSidebarData.outlet.sideImage.src"
+            [alt]="outletSidebarData.outlet.sideImage.alt">
         </a>
       </div>
     </div>
   </div>
+
   <!-- Sidebar Hakkında -->
-  <div class="dropdown-menu" *ngIf="activeDropdown === 'hakkında'">
+  <div class="dropdown-menu" *ngIf="activeDropdown === 'hakkında' && aboutSidebarData">
     <div class="nav-wrapper js-nav-wrapper">
       <div class="nav-wrapper-node js-wrapper-node">
         <div class="navigation__wrapper__inner js-inner-level2">
           <div class="nav-wrapper-node__top">
+            <!-- Ana kategoriler -->
             <div class="nav-wrapper-node__top__left">
-              <ul class="level2 js-level2">
+              <ul class="level2 js-level2" *ngFor="let category of aboutSidebarData.about.leftCategories">
                 <li>
-                  <a class="navigation-node-wrapper ">
-                    <span class="title-span"> VAKKO HAKKINDA </span>
-                  </a>
+                  <div *ngIf="category.subcategories" class="navigation-node-wrapper no-link">
+                    <span class="title-span">{{ category.title }}</span>
+                  </div>
                   <div class="wrapper js-wrapper-level2">
                     <ul class="level3 js-level3">
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> KURUCU </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> KRONOLOJİ </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> KURUMSAL KİTAP </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> MAISON VAKKO </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="navigation-node-wrapper" href="#">
-                          <span class="sub-span"> SÜRDÜRÜLEBİLİRLİK </span>
+                      <li *ngFor="let subCategory of category.subcategories">
+                        <a class="navigation-node-wrapper" [href]="subCategory.link">
+                          <span class="sub-span">{{ subCategory.name }}</span>
                         </a>
                       </li>
                     </ul>
                   </div>
-                </li>
               </ul>
             </div>
             <div class="nav-wrapper-node__top__right">
@@ -1513,113 +588,42 @@
           </div>
         </div>
       </div>
-      <div class="nav-wrapper__image">
-        <a href="#">
-          <img class="drop-img" src="assets/sidenavImg/sidebarimg13.jpeg" alt="About">
+      <div class="nav-wrapper__image" *ngIf="aboutSidebarData.about.sideImage">
+        <a [href]="aboutSidebarData.about.sideImage.link">
+          <img class="drop-img" [src]="aboutSidebarData.about.sideImage.src"
+            [alt]="aboutSidebarData.about.sideImage.alt">
         </a>
       </div>
     </div>
   </div>
-
+  <!-- Sidebar Menu -->
   <div class="sidenav-overlay"></div>
   <div class="sidenav-wrapper">
     <div class="wrapper-top">
       <button class="buttonClose" (click)="closeSidenav()">
-        <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-          fill="#5f6368">
-          <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
-        </svg>
+        <img src="assets/xicon.svg">
       </button>
     </div>
+
     <nav class="side-nav">
       <ul class="sidebar-menu">
-        <li (mouseenter)="showDropdown('women')">
-          <a href="#">
-            <span [ngStyle]="{'color': activeDropdown === 'women' ? 'black' : ''}">Kadın</span>
-          </a>
-        </li>
-      </ul>
-      <ul class="sidebar-menu">
-        <li (mouseenter)="showDropdown('men')">
-          <span [ngStyle]="{'color': activeDropdown === 'men' ? 'black' : ''}">Erkek</span>
-        </li>
-      </ul>
-      <ul class="sidebar-menu">
-        <li (mouseenter)="showDropdown('shoesBags')">
-          <span [ngStyle]="{'color': activeDropdown === 'shoesBags' ? 'black' : ''}">Shoes&Bags</span>
-        </li>
-      </ul>
-      <ul class="sidebar-menu">
-        <li (mouseenter)="showDropdown('designer')">
-          <span [ngStyle]="{'color': activeDropdown === 'designer' ? 'black' : ''}">
-            V2k DESIGNERS
-          </span>
-        </li>
-      </ul>
-      <ul class="sidebar-menu">
-        <li (mouseenter)="showDropdown('couture')">
-          <span [ngStyle]="{'color': activeDropdown === 'couture' ? 'black' : ''}">COUTURE</span>
-        </li>
-      </ul>
-      <ul class="sidebar-menu">
-        <li (mouseenter)="showDropdown('wedding')">
-          <span [ngStyle]="{'color': activeDropdown === 'wedding' ? 'black' : ''}">WEDDING</span>
-        </li>
-      </ul>
-      <ul class="sidebar-menu">
-        <li (mouseenter)="showDropdown('home')">
-          <span [ngStyle]="{'color': activeDropdown === 'home' ? 'black' : ''}">Home</span>
-        </li>
-      </ul>
-      <ul class="sidebar-menu">
-        <li (mouseenter)="showDropdown('kozmetik')">
-          <span [ngStyle]="{'color': activeDropdown === 'kozmetik' ? 'black' : ''}">KOZMETİK</span>
-        </li>
-      </ul>
-      <ul class="sidebar-menu">
-        <li (mouseenter)="showDropdown('latelier')">
-          <span [ngStyle]="{'color': activeDropdown === 'latelier' ? 'black' : ''}">L'ATELIER CHOCOLATE </span>
-        </li>
-      </ul>
-      <ul class="sidebar-menu">
-        <li (mouseenter)="showDropdown('vakkorama')">
-          <span [ngStyle]="{'color': activeDropdown === 'vakkorama' ? 'black' : ''}">Vakkorama</span>
-        </li>
-      </ul>
-      <ul class="sidebar-menu">
-        <li (mouseenter)="showDropdown('hotel')">
-          <span [ngStyle]="{'color': activeDropdown === 'hotel' ? 'black' : ''}">VAKKO HOTEL & RESIDENCE</span>
-        </li>
-      </ul>
-      <ul class="sidebar-menu">
-        <li (mouseenter)="showDropdown('outlet')">
-          <span [ngStyle]="{'color': activeDropdown === 'outlet' ? 'black' : ''}">OUTLET</span>
-        </li>
-      </ul>
-      <ul class="sidebar-menu">
-        <li class="sidenav-about" (mouseenter)="showDropdown('hakkında')">
-          <a>
-            <span [ngStyle]="{'color': activeDropdown === 'hakkında' ? 'black' : ''}">VAKKO HAKKINDA</span>
+        <li *ngFor="let item of menuData.menuItems" (mouseenter)="showDropdown(item.key)"
+          [class.sidenav-about]="item.isAbout">
+          <a [href]="item.isAbout ? '#about' : '#' + item.key">
+            <span [ngStyle]="{'color': activeDropdown === item.key ? 'black' : ''}">
+              {{ item.label }}
+            </span>
           </a>
         </li>
       </ul>
     </nav>
+
     <div class="wrapper-bottom">
       <div class="language">
-        <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-          fill="#5f6368">
-          <path
-            d="M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-155.5t86-127Q252-817 325-848.5T480-880q83 0 155.5 31.5t127 86q54.5 54.5 86 127T880-480q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T480-80Zm0-82q26-36 45-75t31-83H404q12 44 31 83t45 75Zm-104-16q-18-33-31.5-68.5T322-320H204q29 50 72.5 87t99.5 55Zm208 0q56-18 99.5-55t72.5-87H638q-9 38-22.5 73.5T584-178ZM170-400h136q-3-20-4.5-39.5T300-480q0-21 1.5-40.5T306-560H170q-5 20-7.5 39.5T160-480q0 21 2.5 40.5T170-400Zm216 0h188q3-20 4.5-39.5T580-480q0-21-1.5-40.5T574-560H386q-3 20-4.5 39.5T380-480q0 21 1.5 40.5T386-400Zm268 0h136q5-20 7.5-39.5T800-480q0-21-2.5-40.5T790-560H654q3 20 4.5 39.5T660-480q0 21-1.5 40.5T654-400Zm-16-240h118q-29-50-72.5-87T584-782q18 33 31.5 68.5T638-640Zm-234 0h152q-12-44-31-83t-45-75q-26 36-45 75t-31 83Zm-200 0h118q9-38 22.5-73.5T376-782q-56 18-99.5 55T204-640Z" />
-        </svg>
+        <img src="assets/footerSvg/language.svg">
         <div class="language-list">
-          <div class="language-list-item">
-            TR
-          </div>
-          <div class="language-list-item">
-            /
-          </div>
-          <div class="language-list-item">
-            EN
+          <div *ngFor="let lang of menuData.languages; let last = last" class="language-list-item">
+            {{ lang.code }}{{ !last ? ' / ' : '' }}
           </div>
         </div>
       </div>

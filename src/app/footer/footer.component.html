@@ -1,4 +1,4 @@
-<footer>
+<!-- <footer>
   <div *ngIf="isLargeScreen">
       <div class="footer">
         <div class="footer-top-wrapper">
@@ -326,4 +326,132 @@
       </div>
     </div>
 </footer>
-  
+   -->
+
+
+
+   <footer>
+  <div *ngIf="isLargeScreen">
+    <div class="footer">
+      <div class="footer-top-wrapper">
+        <div *ngFor="let item of footerTopItems" class="footer-top-item">
+          <img [src]="item.icon" class="icon" alt="icon" />
+          <div class="footer-top-item-content">
+            <span>{{ item.title }}</span>
+            <span *ngIf="item.description" class="footer-top-item-content-desc">{{ item.description }}</span>
+          </div>
+        </div>
+      </div>
+
+      <nav>
+        <ul class="footer-ul">
+          <li *ngFor="let section of footerLinks" [ngClass]="section.class">
+            <span class="frst-span">{{ section.title }}</span>
+            <div class="wrapper">
+              <ul class="childs">
+                <li *ngFor="let child of section.children">
+                  <a [href]="child.href">{{ child.text }}</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="footer-media">
+        <div class="footer-media-wrapper">
+          <a *ngFor="let media of footerMedia">
+            <img [src]="media.icon" class="icon" alt="media" />
+          </a>
+        </div>
+        <div class="footer-media-app">
+          <span>{{ appDescription }}</span>
+          <div class="app-content">
+            <a *ngFor="let app of appStores">
+              <img [src]="app.image" [width]="app.width" [height]="app.height" [alt]="app.alt" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-container">
+        <div class="copyright">
+          {{ copyrightText }}
+        </div>
+
+        <a class="etbis">
+          <img [src]="etbisImage" alt="etbis" />
+        </a>
+
+        <div class="footer-link">
+          <a *ngFor="let link of footerBottomLinks" class="footer-link-a">{{ link }}</a>
+        </div>
+
+        <div class="footer-language">
+          <button class="footer-cookie-btn">{{ cookiePreferences }}</button>
+          <div class="footer-language-select">
+            <span *ngFor="let lang of languages">{{ lang }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!isLargeScreen">
+    <div class="footer">
+      <div class="footer-top-wrapper">
+        <div *ngFor="let item of footerTopItems" class="footer-top-item">
+          <img [src]="item.icon" class="icon" alt="icon" />
+          <div class="footer-top-item-content">
+            <span>{{ item.title }}</span>
+            <span *ngIf="item.description" class="footer-top-item-content-desc">{{ item.description }}</span>
+          </div>
+        </div>
+      </div>
+
+      <nav>
+        <ul class="footer-ul-small">
+          <li *ngFor="let section of footerLinks | keyvalue">
+            <span class="frst-span">{{ section.key }}</span>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="footer-media">
+        <div class="footer-media-wrapper-small">
+          <a *ngFor="let media of footerMedia">
+            <img [src]="media.icon" class="icon" alt="media" />
+          </a>
+        </div>
+        <div class="footer-media-app">
+          <span>{{ appDescription }}</span>
+          <div class="app-content">
+            <a *ngFor="let app of appStores">
+              <img [src]="app.image" [width]="app.width" [height]="app.height" [alt]="app.alt" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-container-small">
+        <a>
+          <img class="etbis-small" [src]="etbisImage" alt="etbis" />
+        </a>
+        <div class="footer-link">
+          <a *ngFor="let link of footerBottomLinks" class="footer-link-a">{{ link }}</a>
+        </div>
+
+        <div class="footer-language">
+          <button class="footer-cookie-btn">{{ cookiePreferences }}</button>
+          <div class="footer-language-select">
+            <span *ngFor="let lang of languages">{{ lang }}</span>
+          </div>
+        </div>
+
+        <div class="copyright">
+          {{ copyrightText }}
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

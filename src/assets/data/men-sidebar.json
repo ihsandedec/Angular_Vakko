@@ -1,0 +1,119 @@
+{
+  "mainCategories": [
+    {
+      "title": "GİYİM",
+      "subCategories": [
+        {
+          "name": "Dış Giyim",
+          "link": "#"
+        },
+        {
+          "name": "Ceket",
+          "link": "#"
+        },
+        {
+          "name": "Takım Elbise",
+          "link": "#"
+        },
+        {
+          "name": "Smokin",
+          "link": "#"
+        },
+        {
+          "name": "Gömlek",
+          "link": "#"
+        },
+        {
+          "name": "T-Shirt & Sweatshirt",
+          "link": "#"
+        },
+        {
+          "name": "Triko",
+          "link": "#"
+        },
+        {
+          "name": "Pantolon",
+          "link": "#"
+        },
+        {
+          "name": "İç Giyim",
+          "link": "#"
+        }
+      ]
+    },
+    {
+      "title": "AKSESUAR",
+      "subCategories": [
+        {
+          "name": "Kravat",
+          "link": "#"
+        },
+        {
+          "name": "Mendil",
+          "link": "#"
+        },
+        {
+          "name": "Papyon",
+          "link": "#"
+        },
+        {
+          "name": "Kemer",
+          "link": "#"
+        },
+        {
+          "name": "Çorap",
+          "link": "#"
+        },
+        {
+          "name": "Bileklik",
+          "link": "#"
+        },
+        {
+          "name": "Kol Düğmesi",
+          "link": "#"
+        },
+        {
+          "name": "Şapka",
+          "link": "#"
+        },
+        {
+          "name": "Kaşkol",
+          "link": "#"
+        },
+        {
+          "name": "Eldiven",
+          "link": "#"
+        }
+      ]
+    }
+  ],
+  "lookbooks": [
+    {
+      "name": "AW'25 LOOKBOOK",
+      "link": "#"
+    },
+    {
+      "name": "YILBAŞI HEDİYE ÖNERİLERİ",
+      "link": "#",
+      "style": {
+        "color": "rgb(212, 66, 62)"
+      }
+    }
+  ],
+  "specialOffers": [
+   
+    {
+      "name": "MUHTEŞEM HAFTA - %40'a Varan",
+      "link": "#"
+    },
+    {
+      "name": "5000 TL ÜZERİ SEÇİLİ ÜRÜNLERDE 1000 TL İNDİRİM",
+      "link": "#"
+    }
+  ],
+  "sidebarImage": {
+    "src": "assets/sidenavImg/sidebarimg02.jpeg",
+    "alt": "Men",
+    "link": "#"
+  }
+}

@@ -1,0 +1,79 @@
+{
+    "shoesBags": {
+        "categories": [
+            {
+                "title": "KADIN",
+                "subCategories": [
+                    {
+                        "name": "Ayakkabı",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Çanta",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Cüzdan",
+                        "link": "#"
+                    },
+                    {
+                        "name": "V2K Designers Ayakkabı & Çanta",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Monogram",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Monogram Initials Koleksiyonu",
+                        "link": "#"
+                    }
+                ]
+            }
+            
+        ],
+        "lookbooks": [
+            
+            {
+                "title": "ERKEK",
+                "subCategories": [
+                    {
+                        "name": "Ayakkabı",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Çanta",
+                        "link": "#"
+                    },
+                    {
+                        "name": "Monogram",
+                        "link": "#"
+                    },
+                    {
+                        "name": "YILBAŞI HEDİYE ÖNERİLERİ",
+                        "link": "#",
+                        "style": {
+                            "color": "rgb(212, 66, 62)"
+                        }
+                    }
+                ]
+            }
+            
+        ],
+        "specialOffers": [
+            {
+                "name": "MUHTEŞEM HAFTA - %40'a Varan",
+                "link": "#"
+            },
+            {
+                "name": "5000 TL ÜZERİ SEÇİLİ ÜRÜNLERDE 1000 TL İNDİRİM",
+                "link": "#"
+            }
+        ],
+        "sideImage": {
+            "src": "assets/sidenavImg/sidebarimg03.jpeg",
+            "alt": "ShoesBags",
+            "link": "#"
+        }
+    }
+}

@@ -1,0 +1,67 @@
+{
+    "menuItems": [
+      {
+        "label": "Kadın",
+        "key": "women"
+      },
+      {
+        "label": "Erkek",
+        "key": "men"
+      },
+      {
+        "label": "Shoes&Bags",
+        "key": "shoesBags"
+      },
+      {
+        "label": "V2k DESIGNERS",
+        "key": "designer"
+      },
+      {
+        "label": "COUTURE",
+        "key": "couture"
+      },
+      {
+        "label": "WEDDING",
+        "key": "wedding"
+      },
+      {
+        "label": "Home",
+        "key": "home"
+      },
+      {
+        "label": "KOZMETİK",
+        "key": "kozmetik"
+      },
+      {
+        "label": "L'ATELIER CHOCOLATE",
+        "key": "latelier"
+      },
+      {
+        "label": "Vakkorama",
+        "key": "vakkorama"
+      },
+      {
+        "label": "VAKKO HOTEL & RESIDENCE",
+        "key": "hotel"
+      },
+      {
+        "label": "OUTLET",
+        "key": "outlet"
+      },
+      {
+        "label": "VAKKO HAKKINDA",
+        "key": "hakkında",
+        "isAbout": true
+      }
+    ],
+    "languages": [
+      {
+        "code": "TR",
+        "name": "Türkçe"
+      },
+      {
+        "code": "EN",
+        "name": "English"
+      }
+    ]
+  }

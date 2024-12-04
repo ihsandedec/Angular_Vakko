@@ -1,0 +1,21 @@
+{
+    "about": {
+      "leftCategories": [
+        {
+          "title": "VAKKO HAKKINDA",
+          "subcategories": [
+            { "name": "KURUCU", "link": "/about/founder" },
+            { "name": "KRONOLOJİ", "link": "/about/chronology" },
+            { "name": "KURUMSAL KİTAP", "link": "/about/corporate-book" },
+            { "name": "MAISON VAKKO", "link": "/about/maison-vakko" },
+            { "name": "SÜRDÜRÜLEBİLİRLİK", "link": "/about/sustainability" }
+          ]
+        }
+      ],
+      "sideImage": {
+        "src": "assets/sidenavImg/sidebarimg13.jpeg",
+        "alt": "About Vakko",
+        "link": "#"
+      }
+    }
+  }

@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import footerData from '../../assets/data/footer.json';
 
 @Component({
   selector: 'app-footer',
@@ -27,5 +28,17 @@ export class FooterComponent implements OnInit {
     const currentWidth = window.innerWidth;
     this.isLargeScreen = currentWidth > 991;
   }
+
+  footerTopItems = footerData.footerTopItems;
+  footerLinks = footerData.footerLinks;
+  footerMedia = footerData.footerMedia;
+  appDescription = footerData.appDescription;
+  appStores = footerData.appStores;
+  copyrightText = footerData.copyrightText;
+  etbisImage = footerData.etbisImage;
+  footerBottomLinks = footerData.footerBottomLinks;
+  cookiePreferences = footerData.cookiePreferences;
+  languages = footerData.languages;
+
   
 }

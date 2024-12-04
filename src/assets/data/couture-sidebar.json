@@ -1,0 +1,38 @@
+{
+    "couture": {
+        "leftCategories": [
+            {
+                "title": "ELBİSE",
+                "link": "#"
+            },
+            {
+                "title": "KOKTEYL ELBİSE",
+                "link": "#"
+            }
+        ],
+        "rightCategories": [
+            {
+                "name": "AKSESUAR",
+                "link": "#"
+            },
+            {
+                "name": "YILBAŞI KOLEKSİYONU",
+                "link": "#",
+                "style": {
+                    "color": "rgb(212, 66, 62)"
+                }
+            }
+        ],
+        "bottomCategories": [
+            {
+                "name": "MUHTEŞEM HAFTA - %40'a Varan",
+                "link": "#"
+            }
+        ],
+        "sideImage": {
+            "src": "assets/sidenavImg/sidebarimg05.jpeg",
+            "alt": "couture",
+            "link": "#"
+        }
+    }
+}
